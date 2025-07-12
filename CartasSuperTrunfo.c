@@ -20,4 +20,5 @@ int main() {
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
     return 0;
+    
 }

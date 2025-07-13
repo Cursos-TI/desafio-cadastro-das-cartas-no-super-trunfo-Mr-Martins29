@@ -4,8 +4,8 @@ int main(){
 
     // Carta 1
 char carta1 = '1';
-char estado1 = 'T';
-char codigo1[5] = "T01";
+char estado1 = 'A';
+char codigo1[5] = "A01";
 char cidade1[15] = "Barrolândia";
 int pessoas1 = 9876;
 int local1 = 5;

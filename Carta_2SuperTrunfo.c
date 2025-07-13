@@ -21,7 +21,7 @@ printf("Código: %s \n", codigo2);
 
 printf("Cidade: %s \n", ciadade2);
 
-printf("Habitantes: %d \n", pessoas2);
+printf("Número de Habitantes: %d \n", pessoas2);
 
 printf("Pontos Turísticos: %d \n", local2);
 

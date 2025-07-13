@@ -22,6 +22,8 @@ printf("Cidade: %s \n", cidade1);
 
 printf("Habitantes: %d \n", pessoas1);
 
+printf("Pontos Turísticos: %d \n", local1);
+
 printf("Tamanho da área: %.3f \n", espaco1);
 
 printf("PIB: %.1f \n", numero1);

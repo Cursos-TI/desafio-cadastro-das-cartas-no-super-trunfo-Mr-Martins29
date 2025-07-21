@@ -7,6 +7,7 @@
 //Teste larissa
 
 int main() {
+    char estado
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
@@ -19,4 +20,5 @@ int main() {
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
     return 0;
+    
 }

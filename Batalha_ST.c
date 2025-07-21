@@ -26,7 +26,7 @@ int locais2 = 15;
 long long int pib2 = 59900000000; 
 float densidade2 = (float)pessoas2 / espaco2;
 float distribuicao2 = (float)pib2 / pessoas2;
-float SuperPoder2 = 1 / (densidade2) + espaco2 + pessoas2 + locais2 +
+long long int SuperPoder2 = 1 / (densidade2) + espaco2 + pessoas2 + locais2 +
                     pib2 + distribuicao2;
 
 // Impressão carta 1;
@@ -53,7 +53,7 @@ printf("Pontos Turísticos: %d \n", locais2);
 printf("PIB: R$ %lld \n", pib2);
 printf("Densidade demográfica: %.3f \n", densidade2);
 printf("Distribuição de renda: R$ %.3f \n", distribuicao2);
-printf("Super Poder da carta B: %.3f \n", SuperPoder2);
+printf("Super Poder da carta B: %lld \n", SuperPoder2);
 
 // Comparação das cartas;
 
@@ -77,6 +77,71 @@ printf("A tem maior distribuição de renda que B: %d \n",
 
 printf("A tem maior super poder que B: %d \n",
                      SuperPoder1 > SuperPoder2);    
+
+// Criando condicões para os valores dos atributos de cada carta;
+
+printf("Território da Carta A é: %d \n", espaco1);
+printf("Território da Carta B é: %d \n", espaco2);
+
+if (espaco1 > espaco2){
+   printf("Carta A é a vencedora! \n");
+} else {
+    printf("Carta B é a vencedora! \n");
+}
+
+printf("A população da Carta A é: %d \n", pessoas1);
+printf("A população da Carta B é: %d \n", pessoas2);
+
+if (pessoas1 > pessoas2) {
+    printf("Carta A é a vencedra! \n");
+} else {
+    printf("Carta B é a vencedora! \n");
+}
+
+printf("Pontos turísticos de A são: %d \n", locais1);
+printf("Pontos turísticos de B são: %d \n", locais2);
+
+if (locais1 > locais2) {
+    printf("Carta A é a vencedora! \n");
+} else {
+    printf("Carta B é a vencedora! \n");
+}
+
+printf("O PIB de A é: R$ %u \n", pib1);
+printf("O PIB de B é: R$ %lld \n", pib2);
+
+if (pib1 > pib2) {
+    printf("Carta A é a vencedora! \n");
+} else {
+    printf("Carta B é a vencedora! \n");
+}
+
+printf("A densidade demográfica de A é: %.3f \n", densidade1);
+printf("A densidade demográfica de B é: %.3f \n", densidade2);
+
+if (densidade1 < densidade2) {
+    printf("Carta A é a vencedora! \n");
+} else {
+    printf("Carta B é a vencedora! \n");
+}
+
+printf("A distribuição de renda de A é: %.3f \n", distribuicao1);
+printf("A distribuição de renda de B é: %.3f \n", distribuicao2);
+
+if (distribuicao1 > distribuicao2) {
+    printf("Carta A é a vencedora! \n");
+} else {
+    printf("Carta B é a vencedora! \n");
+}
+
+printf("O super poder de A vale: %.3f \n", SuperPoder1);
+printf("O super poder de B vale: %lld \n", SuperPoder2);
+
+if (SuperPoder1 > SuperPoder2) {
+    printf("Carta A é a vencedora definitiva do jogo! Parabéns! \n");
+} else {
+    printf("Carta B é a vencedora definitiva do jogo! Parabéns! \n");
+}
 
 // Leitura carta 1;
 
@@ -103,6 +168,8 @@ scanf("%lld", &pib2);
 scanf("%f", &densidade2);
 scanf("%f", &distribuicao2);
 scanf("%f", &SuperPoder2);
+
+
 
                                      
 return 0;

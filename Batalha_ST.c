@@ -15,6 +15,7 @@ float densidade1 = (float)pessoas1 / espaco1;
 float distribuicao1 = (float)pib1 / pessoas1;
 float SuperPoder1 = 1 / (densidade1) + espaco1 + pessoas1 + locais1 +
                     pib1 + distribuicao1;
+int Escolha;                    
 // criação carta 2;
 
 char carta2 = 'B';
@@ -79,68 +80,109 @@ printf("A tem maior super poder que B: %d \n",
                      SuperPoder1 > SuperPoder2);    
 
 // Criando condicões para os valores dos atributos de cada carta;
+// Criando menu de atributos para escolha do jogador;
+// Possibilitando que o jogador compare os atributos de cada carta;
 
+printf("### Menu de atributos das cartas: ###\n ");
+printf("### Carta A: Palmas ###\n");
+printf("### Carta B: Goiânia ###\n");
+printf("1. Espaço Territorial\n");
+printf("2. População\n");
+printf("3. Pontos Turísticos\n");
+printf("4. PIB\n");
+printf("5. Densidade Demográfica\n");
+printf("6. Distribuição de Renda\n");
+printf("7. Super Poder\n");
+printf("Escolha um atributo para comparar: ");
+scanf("%d", &Escolha);
+
+switch(Escolha){
+case 1:
 printf("Território da Carta A é: %d \n", espaco1);
 printf("Território da Carta B é: %d \n", espaco2);
 
 if (espaco1 > espaco2){
-   printf("Carta A é a vencedora! \n");
-} else {
-    printf("Carta B é a vencedora! \n");
-}
+   printf("### Carta A é a vencedora! ###\n");
+} else if(espaco1 < espaco2) {
+    printf("### Carta B é a vencedora! ###\n");
+} else
+    printf("### O resulatdo é empate! ###\n");
+    break;
 
+case 2:
 printf("A população da Carta A é: %d \n", pessoas1);
 printf("A população da Carta B é: %d \n", pessoas2);
 
 if (pessoas1 > pessoas2) {
-    printf("Carta A é a vencedra! \n");
-} else {
-    printf("Carta B é a vencedora! \n");
-}
+    printf("### Carta A é a vencedra! ###\n");
+} else if(pessoas1 < pessoas2) {
+    printf("### Carta B é a vencedora! ###\n");
+} else
+    printf("### O resultado é empate! ###\n");
+    break;
 
+case 3:
 printf("Pontos turísticos de A são: %d \n", locais1);
 printf("Pontos turísticos de B são: %d \n", locais2);
 
 if (locais1 > locais2) {
-    printf("Carta A é a vencedora! \n");
-} else {
-    printf("Carta B é a vencedora! \n");
-}
-
+    printf("### Carta A é a vencedora! ###\n");
+} else if(locais1 < locais2) {
+    printf("### Carta B é a vencedora! ###\n");
+} else
+    printf("### O resultado é empate! ###\n");
+    break;
+case 4:
 printf("O PIB de A é: R$ %u \n", pib1);
 printf("O PIB de B é: R$ %lld \n", pib2);
 
 if (pib1 > pib2) {
-    printf("Carta A é a vencedora! \n");
-} else {
-    printf("Carta B é a vencedora! \n");
-}
+    printf("### Carta A é a vencedora! ###\n");
+} else if(pib1 < pib2) {
+    printf("### Carta B é a vencedora! ###\n");
+} else
+    printf("### O resultado é empate! ###\n");
+    break;
 
+case 5:    
 printf("A densidade demográfica de A é: %.3f \n", densidade1);
 printf("A densidade demográfica de B é: %.3f \n", densidade2);
 
 if (densidade1 < densidade2) {
-    printf("Carta A é a vencedora! \n");
-} else {
-    printf("Carta B é a vencedora! \n");
-}
+    printf("### Carta A é a vencedora! ###\n");
+} else if(densidade1 > densidade2) {
+    printf("### Carta B é a vencedora! ###\n");
+} else
+    printf("### O resultado é empate! ###\n");
+    break;
 
+case 6:    
 printf("A distribuição de renda de A é: %.3f \n", distribuicao1);
 printf("A distribuição de renda de B é: %.3f \n", distribuicao2);
 
 if (distribuicao1 > distribuicao2) {
-    printf("Carta A é a vencedora! \n");
-} else {
-    printf("Carta B é a vencedora! \n");
-}
+    printf("### Carta A é a vencedora! ###\n");
+} else if(distribuicao1 < distribuicao2) {
+    printf("### Carta B é a vencedora! ###\n");
+} else
+    printf("### O resultado é empate! ###\n");
+    break;
 
+case 7:    
 printf("O super poder de A vale: %.3f \n", SuperPoder1);
 printf("O super poder de B vale: %lld \n", SuperPoder2);
 
 if (SuperPoder1 > SuperPoder2) {
-    printf("Carta A é a vencedora definitiva do jogo! Parabéns! \n");
-} else {
-    printf("Carta B é a vencedora definitiva do jogo! Parabéns! \n");
+    printf("### Carta A é a vencedora! ###\n");
+} else if (SuperPoder1 < SuperPoder2) {
+    printf("### Carta B é a vencedora! ###\n");
+} else
+    printf("### O resultado é empate! ###\n");
+    break;
+
+default:
+printf("### Opção indisponível! ###\n");
+
 }
 
 // Leitura carta 1;
@@ -169,9 +211,6 @@ scanf("%f", &densidade2);
 scanf("%f", &distribuicao2);
 scanf("%f", &SuperPoder2);
 
-
-
-                                     
 return 0;
 
 }

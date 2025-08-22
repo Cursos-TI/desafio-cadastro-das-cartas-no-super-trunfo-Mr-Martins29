@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main(){
 
@@ -30,9 +32,163 @@ float distribuicao2 = (float)pib2 / pessoas2;
 long long int SuperPoder2 = 1 / (densidade2) + espaco2 + pessoas2 + locais2 +
                     pib2 + distribuicao2;
 
+// Criando mecanismo de comparação entre atributos;
+// Gerando os dados do programa;
+
+int resultado1, resultado2, resultado3;
+char Atributo1, Atributo2, Atributo3;
+
+// Implementando o programa;
+// Gerando as opções;
+
+srand((time(0)));
+espaco1 = rand() % 100 + 1;
+espaco2 = rand() % 100 + 1;
+pessoas1= rand() % 100 + 1;
+pessoas2 = rand() % 100 + 1;
+SuperPoder1 = rand() % 100 + 1;
+SuperPoder2 = rand() % 100 + 1;
+
+// Início do jogo;
+
+printf("### Escolha o primeiro atributo ###\n");
+printf("E. Espaço\n");
+printf("P. População\n");
+printf("S. Super Poder\n");
+
+printf("Escolha a comparação: ");
+scanf(" %c", &Atributo1);
+
+switch (Atributo1)
+{
+case 'E':
+case 'e':
+{
+    printf("Você escolheu o espaço!\n");
+    resultado1 = espaco1 > espaco2 ? 1 : 0;
+}
+    break;
+
+case 'P':
+case 'p':
+{
+    printf("Você escolheu a população!\n");
+    resultado2 = pessoas1 > pessoas2  ? 1 : 0;
+} 
+    break;
+
+case 'S':  
+case 's':
+{
+    printf("Você escolheu o super poder!\n");
+    resultado3 = SuperPoder1 > SuperPoder2 ? 1 : 0;
+}
+default:
+printf("Opção de jogo inválida!\n");
+
+    break;
+}
+
+printf("*** Escolha o segundo atributo! ***\n");
+printf("### Atenção!!! Você deve escolher um atributo diferente do primeiro!!! ###\n");
+printf("E. Espaço\n");
+printf("P. População\n");
+printf("S. Super Poder\n");
+
+printf("Escolha a comparação: ");
+scanf(" %c", &Atributo2);
+
+if(Atributo1 == Atributo2) {
+    printf("Opção indesejada!\n");
+} else {
+
+    switch (Atributo2)
+    {
+    case 'E':
+    case 'e':
+    printf("Você escolheu o espaço!\n");
+    resultado2 = espaco1 > espaco2 ? 1 : 0;
+
+        break;
+    
+    case 'P':
+    case 'p':
+    printf("Você escolheu a população!\n");
+    resultado2 = pessoas1 > pessoas2 ? 1 : 0;
+
+        break;
+
+    case 'S':
+    case 's':
+    printf("Você escolheu o super poder!\n");
+    resultado2 = SuperPoder1 > SuperPoder2 ? 1 : 0;
+
+       break;
+
+    default:
+    printf("Opção inválida!\n");
+
+        break;
+    }
+}
+
+printf("*** Escolha o terceiro atributo! ***\n");
+printf("### Atenção!!! Este atributo deve ser diferente do primeiro e do segundo! ###\n");
+printf("E. Espaço\n");
+printf("P. População\n");
+printf("S. Super Poder\n");
+
+printf("Escolha a comparação: ");
+scanf(" %c", &Atributo3);
+
+if (Atributo2 == Atributo3) {
+    printf("Opção indesejada!\n");
+ 
+} else {
+
+switch (Atributo3)
+    {
+    case 'E':
+    case 'e':
+    printf("Você escolheu o espaço!\n");
+    resultado3 = espaco1 > espaco2 ? 1 : 0;
+
+        break;
+    
+    case 'P':
+    case 'p':
+    printf("Você escolheu a população!\n");
+    resultado3 = pessoas1 > pessoas2 ? 1 : 0;
+
+        break;
+
+case 'S':
+case 's':
+printf("Você escolheu o super poder!\n");
+resultado3 = SuperPoder1 > SuperPoder2 ? 1 : 0;
+
+        break;
+
+    default:
+    printf("Opção inválida!\n");
+
+        break;
+    }
+}
+
+// Implementando a lógica do jogo para obter o resultado;
+
+if ((resultado1 && resultado2) && (resultado3)) {
+    printf("*** Parabéns, você venceu! ***\n");
+} else if ((resultado1 && resultado2) != (resultado3)) {
+    printf("*** Parabéns, você venceu! ***\n");
+} else {
+    printf("### Lamento, você perdeu! ###\n");
+}
+
 // Impressão carta 1;
 
-printf("Nome da Carta: %c \n", carta1);
+printf("### Nome da Carta: %c ###\n", carta1);
 printf("Código: %s \n", codigo1);
 printf("Cidade: %s \n", cidade1);
 printf("Espaço Territorial: %d \n", espaco1);
@@ -45,7 +201,7 @@ printf("Super Poder da carta A: %.3f \n", SuperPoder1);
 
 // Impressão carta 2
 
-printf("Nome da Carta: %c \n", carta2);
+printf("### Nome da Carta: %c ###\n", carta2);
 printf("Código: %s \n", codigo2);
 printf("Cidade: %s \n", cidade2);
 printf("Espaço Territorial: %d \n", espaco2);
@@ -83,7 +239,7 @@ printf("A tem maior super poder que B: %d \n",
 // Criando menu de atributos para escolha do jogador;
 // Possibilitando que o jogador compare os atributos de cada carta;
 
-printf("### Menu de atributos das cartas: ###\n ");
+printf("*** Menu de atributos das cartas: ***\n ");
 printf("### Carta A: Palmas ###\n");
 printf("### Carta B: Goiânia ###\n");
 printf("1. Espaço Territorial\n");
@@ -182,34 +338,19 @@ if (SuperPoder1 > SuperPoder2) {
 
 default:
 printf("### Opção indisponível! ###\n");
-
+break;
 }
 
-// Leitura carta 1;
 
-scanf("%c", &carta1);
-scanf("%s", codigo1);
-scanf("%s", cidade1);
-scanf("%d", &espaco1);
-scanf("%d", &pessoas1);
-scanf("%d", &locais1);
-scanf("%u", &pib1);
-scanf("%f", &densidade1);
-scanf("%f", &distribuicao1);
-scanf("%f", &SuperPoder1);
+// Início do jogo;
 
-// Leitura carta 2;
+printf("### Escolha o primeiro atributo ###\n");
+printf("A. Ataque\n");
+printf("D. Defesa\n");
+printf("R. Recuo\n");
 
-scanf("%c", &carta2);
-scanf("%s", codigo2);
-scanf("%s", cidade2);
-scanf("%d", &espaco2);
-scanf("%d", &pessoas2);
-scanf("%d", &locais2);
-scanf("%lld", &pib2);
-scanf("%f", &densidade2);
-scanf("%f", &distribuicao2);
-scanf("%f", &SuperPoder2);
+
+
 
 return 0;
 
